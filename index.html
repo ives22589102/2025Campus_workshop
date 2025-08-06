@@ -203,49 +203,49 @@
 </head>
 <body class="overflow-x-hidden">
 
-  <!-- ============================================================
-    HEADER & NAVIGATION BAR (OPTIMIZED)
-    ============================================================ -->
-    <header id="main-nav" style="background: linear-gradient(to right, #a74a57, #a74a57);" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
-      <nav class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8" aria-label="Main Navigation"> 
-        <div class="flex items-center justify-between h-16 md:h-20">
-          <!-- Logo - 尺寸保留原樣 -->
-          <div class="flex-shrink-0">
-            <a href="https://rog.asus.com/tw/" target="_blank" rel="noopener noreferrer" title="前往 ROG 官方網站 (在新分頁開啟)">
-              <img class="h-28 md:h-40 w-auto" src="v1/img/ROG landscape logo_white.png" alt="ROG Republic of Gamers 官方 Logo">
-            </a>
-          </div>
-          <!-- Desktop Menu -->
+  <!-- START: 修改後的 Header (無 Logo, 手機按鈕在右) -->
+<!-- 背景色與效果維持不變 -->
+<header id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#a74a57]/90 backdrop-blur-sm shadow-md">
+  <!-- relative 作為定位基準點 -->
+  <nav class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main Navigation">
+      <!-- 1. 將 justify-between 改為 justify-end，讓手機選單按鈕靠右 -->
+      <div class="flex items-center justify-end md:justify-center h-16 md:h-20">
+          <!-- 2. Logo 的 div 已完全移除 -->
+          
+          <!-- Desktop Menu - 維持絕對定位置中 -->
           <div class="hidden md:block">
-            <div class="ml-10 flex items-baseline space-x-1">                
-              <a href="https://asus.feversocial.com/ASUSOPMKT/183#%E9%97%9C%E6%96%BC_ROG%E6%A0%A1%E5%9C%92%E9%9B%BB%E7%AB%B6%E8%81%AF%E7%9B%9F" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">校園電競聯盟</a>
-              <a href="#intro" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">關於工作坊</a>
-              <a href="#apply" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">報名方式</a>
-              <a href="#courses" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">最新課程</a>
-              <a href="#lineup" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">超強陣容</a>
-            </div>
+              <div class="flex items-baseline space-x-1">
+                  <a href="https://asus.feversocial.com/ASUSOPMKT/183#%E9%97%9C%E6%96%BC_ROG%E6%A0%A1%E5%9C%92%E9%9B%BB%E7%AB%B6%E8%81%AF%E7%9B%9F" target="_blank" rel="noopener noreferrer" class="text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-colors">校園電競聯盟</a>
+                  <a href="#intro" class="text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-colors">關於工作坊</a>
+                  <a href="#apply" class="text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-colors">報名方式</a>
+                  <a href="#courses" class="text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-colors">最新課程</a>
+                  <a href="#lineup" class="text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-colors">超強陣容</a>
+              </div>
           </div>
-          <!-- Mobile Menu Button -->
+          
+          <!-- Mobile Menu Button - 現在是 flex 容器中唯一的直接子元素 (手機版) -->
           <div class="-mr-2 flex md:hidden">
-            <button id="mobile-menu-button" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-              <span class="sr-only">開啟主選單</span>
-              <svg id="hamburger-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
-              <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
+              <button id="mobile-menu-button" type="button" class="bg-white/10 inline-flex items-center justify-center p-2 rounded-md text-gray-200 hover:text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                  <span class="sr-only">開啟主選單</span>
+                  <svg id="hamburger-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                  <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
           </div>
-        </div>
-      </nav>
-      <!-- Mobile Menu -->
-      <div class="md:hidden hidden" id="mobile-menu">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800/95 backdrop-blur-sm">
-          <a href="https://asus.feversocial.com/ASUSOPMKT/183#%E9%97%9C%E6%96%BC_ROG%E6%A0%A1%E5%9C%92%E9%9B%BB%E7%AB%B6%E8%81%AF%E7%9B%9F" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">校園電競聯盟</a>
-          <a href="#intro" class="mobile-menu-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">關於工作坊</a>
-          <a href="#apply" class="mobile-menu-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">報名方式</a>
-          <a href="#courses" class="mobile-menu-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">最新課程</a>
-          <a href="#lineup" class="mobile-menu-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">超強陣容</a>
-        </div>
       </div>
-    </header>
+  </nav>
+  
+  <!-- Mobile Menu - 樣式不變 -->
+  <div class="md:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#a74a57]/95 backdrop-blur-sm">
+          <a href="https://asus.feversocial.com/ASUSOPMKT/183#%E9%97%9C%E6%96%BC_ROG%E6%A0%A1%E5%9C%92%E9%9B%BB%E7%AB%B6%E8%81%AF%E7%9B%9F" target="_blank" rel="noopener noreferrer" class="text-gray-200 hover:bg-white/10 hover:text-white block px-3 py-2 rounded-md text-base font-medium">校園電競聯盟</a>
+          <a href="#intro" class="mobile-menu-link text-gray-200 hover:bg-white/10 hover:text-white block px-3 py-2 rounded-md text-base font-medium">關於工作坊</a>
+          <a href="#apply" class="mobile-menu-link text-gray-200 hover:bg-white/10 hover:text-white block px-3 py-2 rounded-md text-base font-medium">報名方式</a>
+          <a href="#courses" class="mobile-menu-link text-gray-200 hover:bg-white/10 hover:text-white block px-3 py-2 rounded-md text-base font-medium">最新課程</a>
+          <a href="#lineup" class="mobile-menu-link text-gray-200 hover:bg-white/10 hover:text-white block px-3 py-2 rounded-md text-base font-medium">超強陣容</a>
+      </div>
+  </div>
+</header>
+<!-- END: 修改後的 Header -->
 
   <!-- (SEO 優化) 將主要內容包裹在 <main> 標籤中 -->
   <main>
@@ -327,7 +327,7 @@
                         </button>
                         
                         <!-- 按鈕二：登錄領回饋金 -->
-                        <a href="https://your-redemption-page-url.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3 font-bold text-white bg-gradient-to-r from-[#c59eb8] to-[#a74a57] rounded-lg shadow-md hover:scale-105 transform transition duration-300">
+                        <a href="https://www.asus.com/tw/events/infoM/activity_2025Campus_pass" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3 font-bold text-white bg-gradient-to-r from-[#c59eb8] to-[#a74a57] rounded-lg shadow-md hover:scale-105 transform transition duration-300">
                           <!-- 新的 SVG 圖示 -->
                           <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61483 7.84006L12.0006 0.5L15.3864 7.84006L23.4133 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26ZM12.0006 15.9684L16.2473 18.3451L15.2988 13.5718L18.8718 10.2918L14.039 9.69434L12.0006 5.27502L9.96221 9.69434L5.12942 10.2918L8.70239 13.5718L7.75394 18.3451L12.0006 15.9684Z"></path></svg>
                           領取回饋金
@@ -497,7 +497,7 @@
               <div class="space-y-6">
                   <div class="flex items-start"><div class="flex-shrink-0 w-8 h-8 mr-4 bg-white/10 rounded-full flex items-center justify-center font-bold text-lg">1</div><div><strong class="block text-lg md:text-xl font-semibold">新品搶先體驗</strong><span class="text-gray-300">每季皆有機會優先開箱 ROG 最新產品，直接寄到你家試用，第一手體驗最酷最潮的 ROG 新品！分享使用心得，還有精美好禮等你拿！</span></div></div>
                   <div class="flex items-start"><div class="flex-shrink-0 w-8 h-8 mr-4 bg-white/10 rounded-full flex items-center justify-center font-bold text-lg">2</div><div><strong class="block text-lg md:text-xl font-semibold">活動優先權</strong><span class="text-gray-300">年底的 ROG DAY 等熱門活動皆名額有限、報名踴躍，校園菁英可享專屬保障名額 (每場高達 5 名)，讓你不再錯過任何精彩現場！</span></div></div>
-                  <div class="flex items-start"><div class="flex-shrink-0 w-8 h-8 mr-4 bg-white/10 rounded-full flex items-center justify-center font-bold text-lg">3</div><div><strong class="block text-lg md:text-xl font-semibold">專屬購機回饋金</strong><span class="text-gray-300">享有 專屬菁英購機回饋金 600 元 × 30 組！於各大通路購買指定 ROG 產品時，每件商品可折抵一次 600 元（需至<a href="#" target="_blank" class="text-blue-600 underline font-semibold hover:text-blue-800 transition">活動頁面</a>登錄領取回饋金），讓你輕鬆用超值價格入手全新 ROG 裝備。不只自己享好康，還能分享給親友、同學一起拿優惠！一年內使用滿 10 組，還可再延長通行證效期一年（限延長一次）。</span></div></div>
+                  <div class="flex items-start"><div class="flex-shrink-0 w-8 h-8 mr-4 bg-white/10 rounded-full flex items-center justify-center font-bold text-lg">3</div><div><strong class="block text-lg md:text-xl font-semibold">專屬購機回饋金</strong><span class="text-gray-300">享有 專屬菁英購機回饋金 600 元 × 30 組！於各大通路購買指定 ROG 產品時，每件商品可折抵一次 600 元（需至<a href="https://www.asus.com/tw/events/infoM/activity_2025Campus_pass" target="_blank" class="text-blue-600 underline font-semibold hover:text-blue-800 transition">活動頁面</a>登錄領取回饋金），讓你輕鬆用超值價格入手全新 ROG 裝備。不只自己享好康，還能分享給親友、同學一起拿優惠！一年內使用滿 10 組，還可再延長通行證效期一年（限延長一次）。</span></div></div>
               </div>
               <hr class="border-gray-700 my-8">
               <div>
